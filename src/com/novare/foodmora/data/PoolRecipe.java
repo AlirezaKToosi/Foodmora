@@ -1,6 +1,7 @@
 package com.novare.foodmora.data;
 
 import com.novare.foodmora.utill.Ingredient;
+import com.novare.foodmora.utill.MeasureType;
 import com.novare.foodmora.utill.Recipe;
 
 import java.util.ArrayList;
@@ -10,14 +11,14 @@ import java.util.NoSuchElementException;
 
 public class PoolRecipe {
     private static List<Ingredient> recipe1Ingredients = new ArrayList<>(Arrays.asList(
-            new Ingredient("all-purpose flour", "cups", 1.5),
-            new Ingredient("blueberries", "cup", 1),
-            new Ingredient("sugar", "cup", 0.25),
-            new Ingredient("egg", "", 1),
-            new Ingredient("baking powder", "tbsp", 1),
-            new Ingredient("milk", "cup", 1),
-            new Ingredient("salt", "tsp", 0.25),
-            new Ingredient("melted butter", "cup", 0.25)
+            new Ingredient("all-purpose flour", MeasureType.KILOGRAM, 0.2),
+            new Ingredient("blueberries", MeasureType.KILOGRAM, 0.1),
+            new Ingredient("sugar", MeasureType.KILOGRAM, 0.025),
+            new Ingredient("egg", MeasureType.QUANTITY, 1),
+            new Ingredient("baking powder", MeasureType.KILOGRAM, 0.01),
+            new Ingredient("milk", MeasureType.LITERS, 1),
+            new Ingredient("salt", MeasureType.KILOGRAM, 0.025),
+            new Ingredient("melted butter", MeasureType.LITERS, 0.025)
     ));
     private static List<String> recipe1Steps = new ArrayList<>(Arrays.asList(
             "Step 1:Mix the dry ingredients and add the blueberries.",
@@ -25,14 +26,14 @@ public class PoolRecipe {
             "Step 3:Cook pancakes on a greased griddle or skillet over medium heat until golden brown on both sides."
     ));
     private static List<Ingredient> recipe2Ingredients = new ArrayList<>(Arrays.asList(
-            new Ingredient("broccoli florets", "cups", 2),
-            new Ingredient("carrots, sliced", "cups", 1),
-            new Ingredient("red bell pepper, sliced", "cup", 1),
-            new Ingredient("snow peas", "cups", 1),
-            new Ingredient("garlic cloves, minced", "tbsp", 2),
-            new Ingredient("soy sauce", "tbsp", 3),
-            new Ingredient("sesame oil", "tbsp", 1),
-            new Ingredient("vegetable oil", "tbsp", 2)
+            new Ingredient("broccoli florets", MeasureType.KILOGRAM, 0.2),
+            new Ingredient("carrots, sliced", MeasureType.KILOGRAM, 0.1),
+            new Ingredient("red bell pepper, sliced", MeasureType.KILOGRAM, 0.1),
+            new Ingredient("snow peas", MeasureType.KILOGRAM, 0.1),
+            new Ingredient("garlic cloves, minced", MeasureType.KILOGRAM, 0.02),
+            new Ingredient("soy sauce", MeasureType.LITERS, 0.03),
+            new Ingredient("sesame oil", MeasureType.LITERS, 0.01),
+            new Ingredient("vegetable oil", MeasureType.LITERS, 0.02)
     ));
 
     private static List<String> recipe2Steps = new ArrayList<>(Arrays.asList(
@@ -43,13 +44,13 @@ public class PoolRecipe {
             "Step 5: Remove from heat and serve the vegetable stir-fry hot."
     ));
     private static List<Ingredient> recipe3Ingredients = new ArrayList<>(Arrays.asList(
-            new Ingredient("spaghetti", "ounces", 8),
-            new Ingredient("bacon, chopped", "ounces", 4),
-            new Ingredient("garlic cloves, minced", "tsp", 2),
-            new Ingredient("eggs", "", 2),
-            new Ingredient("Parmesan cheese, grated", "cup", 0.5),
-            new Ingredient("black pepper, freshly ground", "tsp", 0.5),
-            new Ingredient("salt", "tsp", 0.25)
+            new Ingredient("spaghetti", MeasureType.KILOGRAM, 0.5),
+            new Ingredient("bacon, chopped", MeasureType.KILOGRAM, 0.4),
+            new Ingredient("garlic cloves, minced", MeasureType.KILOGRAM, 0.02),
+            new Ingredient("eggs", MeasureType.QUANTITY, 2),
+            new Ingredient("Parmesan cheese, grated", MeasureType.KILOGRAM, 0.25),
+            new Ingredient("black pepper, freshly ground", MeasureType.KILOGRAM, 0.02),
+            new Ingredient("salt", MeasureType.KILOGRAM, 0.01)
     ));
 
     private static List<String> recipe3Steps = new ArrayList<>(Arrays.asList(
@@ -63,15 +64,15 @@ public class PoolRecipe {
             "Step 8: Serve the spaghetti carbonara hot, garnished with additional grated Parmesan cheese and black pepper if desired."
     ));
     private static List<Ingredient> recipe4Ingredients = new ArrayList<>(Arrays.asList(
-            new Ingredient("boneless, skinless chicken breasts, sliced", "lbs", 1),
-            new Ingredient("bell peppers, sliced", "cup", 1),
-            new Ingredient("onion, sliced", "cup", 1),
-            new Ingredient("broccoli florets", "cups", 2),
-            new Ingredient("garlic cloves, minced", "tsp", 2),
-            new Ingredient("soy sauce", "tbsp", 3),
-            new Ingredient("hoisin sauce", "tbsp", 2),
-            new Ingredient("sesame oil", "tbsp", 1),
-            new Ingredient("vegetable oil", "tbsp", 2)
+            new Ingredient("boneless, skinless chicken breasts, sliced", MeasureType.KILOGRAM, 0.8),
+            new Ingredient("bell peppers, sliced", MeasureType.KILOGRAM, 0.01),
+            new Ingredient("onion, sliced", MeasureType.KILOGRAM, 0.1),
+            new Ingredient("broccoli florets", MeasureType.KILOGRAM, 0.2),
+            new Ingredient("garlic cloves, minced", MeasureType.KILOGRAM, 0.02),
+            new Ingredient("soy sauce", MeasureType.LITERS,0.03),
+            new Ingredient("hoisin sauce", MeasureType.LITERS,0.02),
+            new Ingredient("sesame oil", MeasureType.LITERS,0.01),
+            new Ingredient("vegetable oil", MeasureType.LITERS,0.02)
     ));
 
     private static List<String> recipe4Steps = new ArrayList<>(Arrays.asList(
@@ -84,13 +85,13 @@ public class PoolRecipe {
             "Step 7: Remove from heat and serve the chicken stir-fry hot. It can be enjoyed on its own or served over steamed rice."
     ));
     private static List<Ingredient> recipe5Ingredients = new ArrayList<>(Arrays.asList(
-            new Ingredient("ripe tomatoes, sliced", "", 4),
-            new Ingredient("fresh mozzarella cheese, sliced", "ounces", 8),
-            new Ingredient("fresh basil leaves", "", 1 / 2),
-            new Ingredient("extra-virgin olive oil", "tbsp", 2),
-            new Ingredient("balsamic glaze", "tbsp", 2),
-            new Ingredient("salt", "pinch", 1),
-            new Ingredient("black pepper, freshly ground", "pinch", 1)
+            new Ingredient("ripe tomatoes, sliced", MeasureType.QUANTITY, 4),
+            new Ingredient("fresh mozzarella cheese, sliced", MeasureType.KILOGRAM, 0.4),
+            new Ingredient("fresh basil leaves", MeasureType.KILOGRAM, 0.1),
+            new Ingredient("extra-virgin olive oil", MeasureType.LITERS,0.02),
+            new Ingredient("balsamic glaze", MeasureType.LITERS,0.02),
+            new Ingredient("salt", MeasureType.KILOGRAM, 0.02),
+            new Ingredient("black pepper, freshly ground", MeasureType.KILOGRAM, 0.01)
     ));
 
     private static List<String> recipe5Steps = new ArrayList<>(Arrays.asList(
@@ -101,15 +102,15 @@ public class PoolRecipe {
             "Step 5: Serve the Caprese salad immediately as a refreshing appetizer or side dish."
     ));
     private static List<Ingredient> recipe6Ingredients = new ArrayList<>(Arrays.asList(
-            new Ingredient("ripe avocados", "", 3),
-            new Ingredient("lime, juiced", "", 1),
-            new Ingredient("red onion, finely chopped", "cup", 1 / 4),
-            new Ingredient("tomato, diced", "", 1),
-            new Ingredient("fresh cilantro leaves, chopped", "tbsp", 2),
-            new Ingredient("jalapeno pepper, seeded and minced", "", 1),
-            new Ingredient("garlic clove, minced", "", 1),
-            new Ingredient("salt", "tsp", 1 / 2),
-            new Ingredient("black pepper, freshly ground", "tsp", 1 / 4)
+            new Ingredient("ripe avocados", MeasureType.QUANTITY, 3),
+            new Ingredient("lime, juiced", MeasureType.QUANTITY, 1),
+            new Ingredient("red onion, finely chopped", MeasureType.QUANTITY, 1 / 4),
+            new Ingredient("tomato, diced", MeasureType.QUANTITY, 1),
+            new Ingredient("fresh cilantro leaves, chopped", MeasureType.KILOGRAM, 0.1),
+            new Ingredient("jalapeno pepper, seeded and minced", MeasureType.KILOGRAM, 0.01),
+            new Ingredient("garlic clove, minced", MeasureType.KILOGRAM, 0.01),
+            new Ingredient("salt", MeasureType.KILOGRAM, 0.01),
+            new Ingredient("black pepper, freshly ground", MeasureType.KILOGRAM, 0.01)
     ));
 
     private static List<String> recipe6Steps = new ArrayList<>(Arrays.asList(
@@ -123,17 +124,17 @@ public class PoolRecipe {
             "Step 8: Serve the guacamole immediately with tortilla chips or as a topping for tacos, nachos, or salads."
     ));
     private static List<Ingredient> recipe7Ingredients = new ArrayList<>(Arrays.asList(
-            new Ingredient("mixed vegetables (e.g., bell peppers, broccoli, carrots)", "cups", 4),
-            new Ingredient("tofu, cubed", "ounces", 8),
-            new Ingredient("soy sauce", "tbsp", 2),
-            new Ingredient("sesame oil", "tbsp", 1),
-            new Ingredient("garlic cloves, minced", "tsp", 2),
-            new Ingredient("ginger, grated", "tsp", 1),
-            new Ingredient("cornstarch", "tbsp", 1),
-            new Ingredient("vegetable broth", "cup", 1 / 4),
-            new Ingredient("vegetable oil", "tbsp", 2),
-            new Ingredient("salt", "tsp", 1 / 2),
-            new Ingredient("black pepper, freshly ground", "tsp", 1 / 4)
+            new Ingredient("mixed vegetables (e.g., bell peppers, broccoli, carrots)", MeasureType.KILOGRAM, 0.5),
+            new Ingredient("tofu, cubed", MeasureType.KILOGRAM, 0.1),
+            new Ingredient("soy sauce", MeasureType.LITERS, 0.02),
+            new Ingredient("sesame oil", MeasureType.LITERS,0.01),
+            new Ingredient("garlic cloves, minced", MeasureType.KILOGRAM, 0.02),
+            new Ingredient("ginger, grated", MeasureType.KILOGRAM, 0.01),
+            new Ingredient("cornstarch", MeasureType.LITERS,0.01),
+            new Ingredient("vegetable broth", MeasureType.KILOGRAM, 0.1),
+            new Ingredient("vegetable oil", MeasureType.LITERS, 0.02),
+            new Ingredient("salt", MeasureType.KILOGRAM, 0.01),
+            new Ingredient("black pepper, freshly ground", MeasureType.KILOGRAM, 0.01)
     ));
 
     private static List<String> recipe7Steps = new ArrayList<>(Arrays.asList(
@@ -146,21 +147,21 @@ public class PoolRecipe {
             "Step 7: Remove from heat and serve the vegetable stir-fry hot, over steamed rice or noodles."
     ));
     private static List<Ingredient> recipe8Ingredients = new ArrayList<>(Arrays.asList(
-            new Ingredient("boneless, skinless chicken breasts", "", 2),
-            new Ingredient("bell peppers (assorted colors), sliced", "", 2),
-            new Ingredient("onion, sliced", "", 1),
-            new Ingredient("olive oil", "tbsp", 2),
-            new Ingredient("lime, juiced", "", 1),
-            new Ingredient("ground cumin", "tsp", 1),
-            new Ingredient("chili powder", "tsp", 1),
-            new Ingredient("garlic powder", "tsp", 1 / 2),
-            new Ingredient("salt", "tsp", 1 / 2),
-            new Ingredient("black pepper, freshly ground", "tsp", 1 / 4),
-            new Ingredient("flour tortillas", "", 8),
-            new Ingredient("sour cream", "", 1 / 2),
-            new Ingredient("guacamole", "", 1 / 2),
-            new Ingredient("salsa", "", 1 / 2),
-            new Ingredient("fresh cilantro, chopped", "tbsp", 2)
+            new Ingredient("boneless, skinless chicken breasts", MeasureType.KILOGRAM, 1),
+            new Ingredient("bell peppers (assorted colors), sliced", MeasureType.KILOGRAM, 0.5),
+            new Ingredient("onion, sliced", MeasureType.QUANTITY, 1),
+            new Ingredient("olive oil", MeasureType.LITERS, 0.02),
+            new Ingredient("lime, juiced", MeasureType.QUANTITY, 1),
+            new Ingredient("ground cumin", MeasureType.KILOGRAM, 0.01),
+            new Ingredient("chili powder", MeasureType.KILOGRAM, 0.01),
+            new Ingredient("garlic powder", MeasureType.KILOGRAM, 0.01),
+            new Ingredient("salt", MeasureType.KILOGRAM, 0.01),
+            new Ingredient("black pepper, freshly ground", MeasureType.KILOGRAM, 0.01),
+            new Ingredient("flour tortillas", MeasureType.KILOGRAM, 0.1),
+            new Ingredient("sour cream", MeasureType.LITERS, 0.1),
+            new Ingredient("guacamole", MeasureType.KILOGRAM, 0.05),
+            new Ingredient("salsa", MeasureType.KILOGRAM, 0.01),
+            new Ingredient("fresh cilantro, chopped", MeasureType.KILOGRAM, 0.02)
     ));
 
     private static List<String> recipe8Steps = new ArrayList<>(Arrays.asList(
@@ -176,17 +177,17 @@ public class PoolRecipe {
             "Step 10: Roll up the tortillas and enjoy!"
     ));
     private static List<Ingredient> recipe9Ingredients = new ArrayList<>(Arrays.asList(
-            new Ingredient("ripe tomatoes, diced", "", 4),
-            new Ingredient("cucumber, diced", "", 1),
-            new Ingredient("red onion, thinly sliced", "", 1 / 2),
-            new Ingredient("kalamata olives, pitted", "", 1 / 2),
-            new Ingredient("feta cheese, crumbled", "", 1 / 2),
-            new Ingredient("fresh parsley, chopped", "tbsp", 2),
-            new Ingredient("extra-virgin olive oil", "tbsp", 2),
-            new Ingredient("lemon juice", "tbsp", 2),
-            new Ingredient("dried oregano", "tsp", 1),
-            new Ingredient("salt", "tsp", 1 / 2),
-            new Ingredient("black pepper, freshly ground", "tsp", 1 / 4)
+            new Ingredient("ripe tomatoes, diced", MeasureType.QUANTITY, 4),
+            new Ingredient("cucumber, diced", MeasureType.QUANTITY, 1),
+            new Ingredient("red onion, thinly sliced", MeasureType.QUANTITY, 1 / 2),
+            new Ingredient("kalamata olives, pitted", MeasureType.QUANTITY, 1 / 2),
+            new Ingredient("feta cheese, crumbled", MeasureType.KILOGRAM, 0.1),
+            new Ingredient("fresh parsley, chopped", MeasureType.KILOGRAM, 0.02),
+            new Ingredient("extra-virgin olive oil", MeasureType.LITERS, 0.02),
+            new Ingredient("lemon juice", MeasureType.LITERS, 0.02),
+            new Ingredient("dried oregano", MeasureType.KILOGRAM, 0.01),
+            new Ingredient("salt", MeasureType.KILOGRAM, 0.01),
+            new Ingredient("black pepper, freshly ground", MeasureType.KILOGRAM, 0.01)
     ));
 
     private static List<String> recipe9Steps = new ArrayList<>(Arrays.asList(
@@ -198,16 +199,16 @@ public class PoolRecipe {
             "Step 6: Enjoy!"
     ));
     private static List<Ingredient> recipe10Ingredients = new ArrayList<>(Arrays.asList(
-            new Ingredient("fettuccine pasta", "ounces", 12),
-            new Ingredient("boneless, skinless chicken breasts", "", 2),
-            new Ingredient("salt", "tsp", 1 / 2),
-            new Ingredient("black pepper, freshly ground", "tsp", 1 / 4),
-            new Ingredient("garlic powder", "tsp", 1 / 2),
-            new Ingredient("olive oil", "tbsp", 2),
-            new Ingredient("unsalted butter", "tbsp", 4),
-            new Ingredient("heavy cream", "cups", 1),
-            new Ingredient("parmesan cheese, grated", "cups", 1),
-            new Ingredient("fresh parsley, chopped", "tbsp", 2)
+            new Ingredient("fettuccine pasta", MeasureType.KILOGRAM, 0.5),
+            new Ingredient("boneless, skinless chicken breasts", MeasureType.KILOGRAM, 0.5),
+            new Ingredient("salt", MeasureType.KILOGRAM, 0.01),
+            new Ingredient("black pepper, freshly ground", MeasureType.KILOGRAM, 0.01),
+            new Ingredient("garlic powder", MeasureType.KILOGRAM, 0.01),
+            new Ingredient("olive oil", MeasureType.LITERS, 0.01),
+            new Ingredient("unsalted butter", MeasureType.LITERS, 0.08),
+            new Ingredient("heavy cream", MeasureType.KILOGRAM, 0.05),
+            new Ingredient("parmesan cheese, grated", MeasureType.KILOGRAM, 0.05),
+            new Ingredient("fresh parsley, chopped", MeasureType.KILOGRAM, 0.05)
     ));
 
     private static List<String> recipe10Steps = new ArrayList<>(Arrays.asList(

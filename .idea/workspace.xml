@@ -9,18 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbe02e26-ac78-4b36-b195-2be9bc36caf9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/novare/foodmora/controller/RecipeControllerInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/novare/foodmora/view/RecipeViewInterface.java" afterDir="false" />
+    <list default="true" id="cbe02e26-ac78-4b36-b195-2be9bc36caf9" name="Changes" comment="Add some changes in error handling">
+      <change afterPath="$PROJECT_DIR$/src/com/novare/foodmora/utill/MeasureType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Foodmora.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Foodmora.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/novare/foodmora/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/novare/foodmora/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/novare/foodmora/controller/RecipeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/novare/foodmora/controller/RecipeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/novare/foodmora/data/PoolRecipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/novare/foodmora/data/PoolRecipe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/novare/foodmora/model/RecipeModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/novare/foodmora/model/RecipeModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/novare/foodmora/utill/Ingredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/novare/foodmora/utill/Ingredient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/novare/foodmora/utill/Recipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/novare/foodmora/utill/Recipe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/novare/foodmora/utill/RecipeWeek.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/novare/foodmora/utill/RecipeWeek.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/novare/foodmora/view/RecipeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/novare/foodmora/view/RecipeView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,6 +26,7 @@
       <list>
         <option value="Class" />
         <option value="Interface" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -109,12 +103,24 @@
       <workItem from="1687349344494" duration="12628000" />
       <workItem from="1687387390512" duration="7098000" />
       <workItem from="1687598286904" duration="61285000" />
-      <workItem from="1687800923579" duration="6002000" />
+      <workItem from="1687800923579" duration="11860000" />
     </task>
+    <task id="LOCAL-00001" summary="Add some changes in error handling">
+      <created>1687809906587</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1687809906587</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add some changes in error handling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add some changes in error handling" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

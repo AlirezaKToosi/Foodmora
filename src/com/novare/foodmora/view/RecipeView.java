@@ -1,6 +1,7 @@
 package com.novare.foodmora.view;
 
 import com.novare.foodmora.utill.Ingredient;
+import com.novare.foodmora.utill.MeasureType;
 import com.novare.foodmora.utill.Recipe;
 import com.novare.foodmora.utill.RecipeWeek;
 
@@ -99,10 +100,8 @@ public class RecipeView implements RecipeViewInterface {
         if (!newIngredientName.isEmpty()) {
             ingredient.setName(newIngredientName);
         }
-        String newMeasureType = getUserInput("Enter new measure type (leave empty to keep the current measure type): ");
-        if (!newMeasureType.isEmpty()) {
-            ingredient.setMeasureType(newMeasureType);
-        }
+        MeasureType newMeasureType = getMeasureTypeInput();
+        ingredient.setMeasureType(newMeasureType);
         String newAmountStr = getUserInput("Enter new amount (leave empty to keep the current amount): ");
         if (!newAmountStr.isEmpty()) {
             try {
@@ -148,7 +147,7 @@ public class RecipeView implements RecipeViewInterface {
     private void addNewIngredient(Recipe recipe) {
         if (getYesNoUserInput("Do you want to add a new ingredient? (Y/N): ")) {
             String ingredientName = getUserInput("Enter ingredient name: ");
-            String measureType = getUserInput("Enter measure type (Quantity, Liters, Kilogram): ");
+            MeasureType measureType = getMeasureTypeInput();
             double amount = Double.parseDouble(getUserInput("Enter amount: "));
             recipe.getIngredients().add(new Ingredient(ingredientName, measureType, amount));
             System.out.println("Ingredient added successfully.");
@@ -193,6 +192,21 @@ public class RecipeView implements RecipeViewInterface {
         return choice.equalsIgnoreCase("Y");
     }
 
+    private MeasureType getMeasureTypeInput() {
+        int choice = getIntNumericUserInput("Enter measure type id between 1 and 3 (1=Quantity, 2=Liters, 3=Kilogram): ");
+        switch (choice) {
+            case 1:
+                return MeasureType.QUANTITY;
+            case 2:
+                return MeasureType.LITERS;
+            case 3:
+                return MeasureType.KILOGRAM;
+            default:
+                displayInvalidInputMessage();
+                return getMeasureTypeInput();
+        }
+    }
+
     private void printIngredientList(List<Ingredient> ingredients) {
         for (int i = 0; i < ingredients.size(); i++) {
             Ingredient ingredient = ingredients.get(i);
@@ -216,7 +230,7 @@ public class RecipeView implements RecipeViewInterface {
         boolean addMoreIngredients = true;
         while (addMoreIngredients) {
             String ingredientName = getUserInput("Ingredient Name: ");
-            String measureType = getUserInput("Measure type (Quantity, Liters, Kilogram): ");
+            MeasureType measureType = getMeasureTypeInput();
             double amount = getDoubleNumericUserInput("Amount: ");
             ingredients.add(new Ingredient(ingredientName, measureType, amount));
             addMoreIngredients = getYesNoUserInput("Do you want to add more ingredients? (Y/N): ");
@@ -236,16 +250,14 @@ public class RecipeView implements RecipeViewInterface {
 
     public void displaySelectedRecipe(List<Recipe> recipes) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the recipe id for displaying: ");
-        int recipeNumber = scanner.nextInt() - 1;
+        int recipeNumber = getIntNumericUserInput("Enter the id for showing details: ") - 1;
         Recipe recipe = recipes.get(recipeNumber);
         viewRecipes(recipe);
     }
 
     public Recipe displayRecipeForEdit(List<Recipe> recipes) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the recipe id for editing: ");
-        int recipeNumber = scanner.nextInt() - 1;
+        int recipeNumber = getIntNumericUserInput("Enter the recipe id for editing: ") - 1;
         return (recipes.get(recipeNumber));
     }
 
@@ -279,16 +291,16 @@ public class RecipeView implements RecipeViewInterface {
     }
 
     public void displayAllRecipeWeek(List<RecipeWeek> recipeWeeks) {
-            System.out.println("----- Past Recipe Weeks -----");
-            for (int i = 0; i < recipeWeeks.size(); i++) {
-                RecipeWeek recipeWeek = recipeWeeks.get(i);
-                System.out.println("Week " + (i + 1));
-                for (int j = 0; j < recipeWeek.getRecipes().size(); j++) {
-                    Recipe recipe = recipeWeek.getRecipes().get(j);
-                    System.out.println("Day " + (j + 1) + ": " + recipe.getName());
-                }
-                System.out.println();
+        System.out.println("----- Past Recipe Weeks -----");
+        for (int i = 0; i < recipeWeeks.size(); i++) {
+            RecipeWeek recipeWeek = recipeWeeks.get(i);
+            System.out.println("Week " + (i + 1));
+            for (int j = 0; j < recipeWeek.getRecipes().size(); j++) {
+                Recipe recipe = recipeWeek.getRecipes().get(j);
+                System.out.println("Day " + (j + 1) + ": " + recipe.getName());
             }
+            System.out.println();
+        }
 
     }
 
@@ -304,9 +316,11 @@ public class RecipeView implements RecipeViewInterface {
     public void displayInvalidInputMessage() {
         System.out.println("⚠️ Invalid input. Please try again.\n");
     }
+
     public void displayErrorMessage(String input) {
         System.out.println("⚠️" + input);
     }
+
     public void displayExitMessage() {
         System.out.println("Exiting the program. Goodbye!\n");
     }
@@ -314,4 +328,5 @@ public class RecipeView implements RecipeViewInterface {
     public void displayBackMainMessage() {
         System.out.println("Back to the Main Menu.\n");
     }
+
 }
