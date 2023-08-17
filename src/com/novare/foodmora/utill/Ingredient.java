@@ -3,7 +3,6 @@ package com.novare.foodmora.utill;
 public class Ingredient {
     private String name;
     private MeasureType measureType;
-    ;
     private double amount;
 
     public Ingredient(String name, MeasureType measureType, double amount) {

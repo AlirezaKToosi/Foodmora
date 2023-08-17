@@ -11,14 +11,13 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class RecipeController implements RecipeControllerInterface {
-    private RecipeModel recipeModel;
-    private RecipeView recipeView;
-    private boolean isDieticianMode;
+    private final RecipeModel recipeModel;
+    private final RecipeView recipeView;
+    private final Random random = new Random();
 
     public RecipeController(RecipeModel recipeModel, RecipeView recipeView) {
         this.recipeModel = recipeModel;
         this.recipeView = recipeView;
-        this.isDieticianMode = false;
     }
 
     public void run(Scanner scanner) {
@@ -41,7 +40,7 @@ public class RecipeController implements RecipeControllerInterface {
                     default:
                         recipeView.displayInvalidInputMessage();
                 }
-            } while (menuChoice != 3);
+            } while (true);
         } catch (Exception exception) {
             recipeView.displayInvalidInputMessage();
             this.run(new Scanner(System.in));
@@ -49,7 +48,7 @@ public class RecipeController implements RecipeControllerInterface {
 
     }
 
-    public void handleUserMenu(Scanner scanner) {
+    private void handleUserMenu(Scanner scanner) {
         int userMenuChoice;
         try {
             do {
@@ -79,14 +78,14 @@ public class RecipeController implements RecipeControllerInterface {
                     default:
                         recipeView.displayInvalidInputMessage();
                 }
-            } while (userMenuChoice != 6);
+            } while (true);
         } catch (Exception exception) {
             recipeView.displayInvalidInputMessage();
             this.handleUserMenu(new Scanner(System.in));
         }
     }
 
-    public void handleDieticianMenu(Scanner scanner) {
+    private void handleDieticianMenu(Scanner scanner) {
         int dieticianMenuChoice;
         try {
             do {
@@ -120,14 +119,14 @@ public class RecipeController implements RecipeControllerInterface {
                     default:
                         recipeView.displayInvalidInputMessage();
                 }
-            } while (dieticianMenuChoice != 7);
+            } while (true);
         } catch (Exception exception) {
             recipeView.displayInvalidInputMessage();
             this.handleDieticianMenu(new Scanner(System.in));
         }
     }
 
-    public void editRecipeInRecipePool() {
+    private void editRecipeInRecipePool() {
         try {
             List<Recipe> commonRecipes = recipeModel.getCommonRecipes();
             recipeView.printRecipes(commonRecipes);
@@ -138,7 +137,7 @@ public class RecipeController implements RecipeControllerInterface {
         }
     }
 
-    public void addNewRecipeToRecipePool() {
+    private void addNewRecipeToRecipePool() {
         try {
             List<Recipe> commonRecipes = recipeModel.getCommonRecipes();
             Recipe recipe = recipeView.createRecipe();
@@ -150,7 +149,7 @@ public class RecipeController implements RecipeControllerInterface {
         }
     }
 
-    public void viewCommonRecipePool() {
+    private void viewCommonRecipePool() {
         try {
             List<Recipe> commonRecipes = recipeModel.getCommonRecipes();
             recipeView.printRecipes(commonRecipes);
@@ -160,7 +159,7 @@ public class RecipeController implements RecipeControllerInterface {
         }
     }
 
-    public void generateRecipeWeek() {
+    private void generateRecipeWeek() {
         try {
             RecipeWeek recipeWeek = new RecipeWeek();
             List<Recipe> commonRecipes = recipeModel.getCommonRecipes();
@@ -184,7 +183,6 @@ public class RecipeController implements RecipeControllerInterface {
 
     public Recipe generateRandomRecipe(List<Recipe> commonRecipes) {
         double totalWeight = commonRecipes.stream().mapToDouble(Recipe::getWeight).sum();
-        Random random = new Random();
         double randomNumber = random.nextDouble() * totalWeight;
         double cumulativeWeight = 0;
 
@@ -197,7 +195,7 @@ public class RecipeController implements RecipeControllerInterface {
         return null;
     }
 
-    public void viewCurrentWeekRecipe() {
+    private void viewCurrentWeekRecipe() {
         try {
             List<RecipeWeek> recipeWeeks = recipeModel.getRecipeWeeks();
             if (recipeWeeks.isEmpty()) {
@@ -213,7 +211,7 @@ public class RecipeController implements RecipeControllerInterface {
         }
     }
 
-    public void viewPastRecipeWeeks() {
+    private void viewPastRecipeWeeks() {
         try {
             List<RecipeWeek> recipeWeeks = recipeModel.getRecipeWeeks();
             if (recipeWeeks.isEmpty()) {
@@ -226,7 +224,7 @@ public class RecipeController implements RecipeControllerInterface {
         }
     }
 
-    public void viewDayRecipeInCurrentWeek() {
+    private void viewDayRecipeInCurrentWeek() {
         try {
             RecipeWeek currentWeek = recipeModel.getRecipeWeeks().get(recipeModel.getRecipeWeeks().size() - 1);
             List<Recipe> recipes = currentWeek.getRecipes();

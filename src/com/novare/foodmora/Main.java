@@ -1,6 +1,5 @@
 package com.novare.foodmora;
 
-import java.util.List;
 import java.util.Scanner;
 
 import com.novare.foodmora.controller.RecipeController;

@@ -9,7 +9,7 @@ import java.util.List;
 
 public class RecipeModel implements RecipeModelInterface{
     private List<Recipe> commonRecipes;
-    private List<RecipeWeek> recipeWeeks;
+    private final List<RecipeWeek> recipeWeeks;
 
     public RecipeModel() {
         commonRecipes = PoolRecipe.getRecipes();

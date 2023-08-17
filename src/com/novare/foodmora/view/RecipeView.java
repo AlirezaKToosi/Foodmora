@@ -249,19 +249,17 @@ public class RecipeView implements RecipeViewInterface {
     }
 
     public void displaySelectedRecipe(List<Recipe> recipes) {
-        Scanner scanner = new Scanner(System.in);
         int recipeNumber = getIntNumericUserInput("Enter the id for showing details: ") - 1;
         Recipe recipe = recipes.get(recipeNumber);
         viewRecipes(recipe);
     }
 
     public Recipe displayRecipeForEdit(List<Recipe> recipes) {
-        Scanner scanner = new Scanner(System.in);
         int recipeNumber = getIntNumericUserInput("Enter the recipe id for editing: ") - 1;
         return (recipes.get(recipeNumber));
     }
 
-    public void viewRecipes(Recipe recipe) {
+    private void viewRecipes(Recipe recipe) {
         System.out.println("----- Recipe Details -----");
         System.out.println("Name: " + recipe.getName());
         System.out.println("Ingredients:");

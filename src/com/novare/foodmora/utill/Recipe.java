@@ -2,9 +2,6 @@ package com.novare.foodmora.utill;
 
 import java.util.List;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Recipe {
     private String name;
     private List<Ingredient> ingredients;
@@ -61,19 +58,4 @@ public class Recipe {
         return steps;
     }
 
-    public void updateIngredients(List<Ingredient> updatedIngredients) {
-        ingredients = updatedIngredients;
-    }
-
-    public void updateSteps(List<String> updatedSteps) {
-        steps = updatedSteps;
-    }
-
-    public void removeIngredient(Ingredient ingredient) {
-        ingredients.remove(ingredient);
-    }
-
-    public void addIngredient(Ingredient ingredient) {
-        ingredients.add(ingredient);
-    }
 }

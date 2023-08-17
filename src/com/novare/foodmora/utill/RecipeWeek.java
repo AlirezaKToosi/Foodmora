@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RecipeWeek {
-    private List<Recipe> recipes;
+    private final List<Recipe> recipes;
 
     public RecipeWeek() {
         recipes = new ArrayList<>();
@@ -17,12 +17,4 @@ public class RecipeWeek {
         return recipes;
     }
 
-    public Recipe getRecipeByName(String recipeName) {
-        for (Recipe recipe : recipes) {
-            if (recipe.getName().equals(recipeName)) {
-                return recipe;
-            }
-        }
-        return null;
-    }
 }

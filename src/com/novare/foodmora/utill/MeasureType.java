@@ -11,7 +11,4 @@ public enum MeasureType {
         this.displayName = displayName;
     }
 
-    public String getDisplayName() {
-        return displayName;
-    }
 }
